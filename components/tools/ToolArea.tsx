@@ -17,6 +17,12 @@ const ResizeImage = dynamic(() => import('./ResizeImage'), { ssr: false })
 const ConvertImage = dynamic(() => import('./ConvertImage'), { ssr: false })
 const CropImage = dynamic(() => import('./CropImage'), { ssr: false })
 const RemoveBackground = dynamic(() => import('./RemoveBackground'), { ssr: false })
+const WordCount = dynamic(() => import('./WordCount'), { ssr: false })
+const CaseConverter = dynamic(() => import('./CaseConverter'), { ssr: false })
+const RemoveDuplicateLines = dynamic(() => import('./RemoveDuplicateLines'), { ssr: false })
+const DiffChecker = dynamic(() => import('./DiffChecker'), { ssr: false })
+const URLEncoder = dynamic(() => import('./URLEncoder'), { ssr: false })
+const Base64 = dynamic(() => import('./Base64'), { ssr: false })
 
 const TOOL_MAP: Record<string, React.ComponentType> = {
   'merge-pdf': MergePDF,
@@ -33,6 +39,12 @@ const TOOL_MAP: Record<string, React.ComponentType> = {
   'convert-image': ConvertImage,
   'crop-image': CropImage,
   'remove-background': RemoveBackground,
+  'word-count': WordCount,
+  'case-converter': CaseConverter,
+  'remove-duplicate-lines': RemoveDuplicateLines,
+  'diff-checker': DiffChecker,
+  'url-encoder': URLEncoder,
+  'base64': Base64,
 }
 
 export default function ToolArea({ slug }: { slug: string }) {

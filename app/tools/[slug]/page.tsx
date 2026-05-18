@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { tools } from '@/lib/tools'
 import ToolIcon from '@/components/ui/ToolIcon'
 import ToolArea from '@/components/tools/ToolArea'
+import { IMPLEMENTED_SLUGS } from '@/lib/implementedTools'
 
 export async function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }))
@@ -85,7 +86,7 @@ export default async function ToolPage({
       {/* Tool area — live tool component or coming-soon placeholder */}
       <div className="bg-surface border border-border rounded-lg p-6">
         <ToolArea slug={slug} />
-        {!['merge-pdf','compress-pdf','split-pdf','rotate-pdf','pdf-to-jpg','jpg-to-pdf','unlock-pdf','protect-pdf','watermark-pdf'].includes(slug) && (
+        {!IMPLEMENTED_SLUGS.has(slug) && (
           <div className="text-center py-8">
             <ToolIcon icon={tool.icon} size={40} className="mx-auto text-border mb-3" />
             <p className="text-sm text-muted">
