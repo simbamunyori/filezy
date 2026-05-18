@@ -7,16 +7,23 @@ import ProcessButton from '@/components/ui/ProcessButton'
 import ResultCard from '@/components/ui/ResultCard'
 
 // Implements PDF open-action JavaScript password gate.
-// This works in all JS-enabled PDF viewers (Adobe, Foxit, most browsers).
-// For cryptographic AES encryption, use dedicated PDF software.
+// Works in Adobe Acrobat/Reader and Foxit. Browser-native PDF viewers do not
+// execute PDF JavaScript, so this is a deterrent, not cryptographic encryption.
+// For strong encryption, use dedicated desktop PDF software.
+
+function djb2Hash(str: string): string {
+  let hash = 5381
+  for (let i = 0; i < str.length; i++) {
+    hash = (((hash << 5) + hash) + str.charCodeAt(i)) | 0
+  }
+  return Math.abs(hash).toString(16)
+}
 
 async function buildProtectedPDF(file: File, password: string): Promise<Uint8Array> {
   const arrayBuffer = await file.arrayBuffer()
   const pdfDoc = await PDFDocument.load(arrayBuffer)
 
-  // Embed a PDF JavaScript action that prompts for password on open.
-  // The password is stored as a SHA-256-derived comparison string in the PDF action.
-  const passwordHex = await sha256Hex(password)
+  const storedHash = djb2Hash(password)
 
   const jsCode = `
 var input = app.response({
@@ -25,14 +32,10 @@ var input = app.response({
   bPassword: true
 });
 if (!input) { app.closeDoc({ bNoSave: true }); }
-var stored = "${passwordHex}";
-var h = "";
-var str = input;
-// Simple djb2 hash for viewer-side check (not cryptographic but deters casual access)
+var stored = "${storedHash}";
 var hash = 5381;
-for (var i = 0; i < str.length; i++) {
-  hash = ((hash << 5) + hash) + str.charCodeAt(i);
-  hash = hash & hash;
+for (var i = 0; i < input.length; i++) {
+  hash = (((hash << 5) + hash) + input.charCodeAt(i)) | 0;
 }
 var derived = Math.abs(hash).toString(16);
 if (derived !== stored) {
@@ -51,14 +54,6 @@ if (derived !== stored) {
   )
 
   return pdfDoc.save()
-}
-
-async function sha256Hex(message: string): Promise<string> {
-  const encoder = new TextEncoder()
-  const data = encoder.encode(message)
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data)
-  const hashArray = Array.from(new Uint8Array(hashBuffer))
-  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('')
 }
 
 export default function ProtectPDF() {

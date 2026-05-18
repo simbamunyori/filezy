@@ -9,7 +9,7 @@ import ResultCard from '@/components/ui/ResultCard'
 import ProgressBar from '@/components/ui/ProgressBar'
 
 if (typeof window !== 'undefined') {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs'
 }
 
 type Quality = 'high' | 'medium' | 'low'
