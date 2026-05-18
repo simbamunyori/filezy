@@ -2,36 +2,36 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Filezy vs Smallpdf: Free, Unlimited PDF Tools Without the Paywall',
+  title: 'Dokly vs Smallpdf: Free, Unlimited PDF Tools Without the Paywall',
   description:
-    'Compare Filezy and Smallpdf. Filezy offers unlimited free PDF tools with no task caps, no watermarks, and no account required — everything Smallpdf charges for.',
+    'Compare Dokly and Smallpdf. Dokly offers unlimited free PDF tools with no task caps, no watermarks, and no account required — everything Smallpdf charges for.',
   openGraph: {
-    title: 'Filezy vs Smallpdf — No Limits, No Paywall',
+    title: 'Dokly vs Smallpdf — No Limits, No Paywall',
     description:
-      'Filezy gives you everything Smallpdf does — for free, forever, with zero restrictions.',
-    url: 'https://filezy.io/alternatives/smallpdf',
-    siteName: 'Filezy',
+      'Dokly gives you everything Smallpdf does — for free, forever, with zero restrictions.',
+    url: 'https://dokly.io/alternatives/smallpdf',
+    siteName: 'Dokly',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://filezy.io/alternatives/smallpdf',
+    canonical: 'https://dokly.io/alternatives/smallpdf',
   },
 }
 
 const comparisonRows = [
-  { feature: 'Free tasks per hour', filezy: 'Unlimited', competitor: '2 tasks/hour' },
-  { feature: 'Watermarks on output', filezy: 'Never', competitor: 'Yes, on free tier' },
-  { feature: 'Account required', filezy: 'No', competitor: 'Required for most features' },
-  { feature: 'File size limit (free)', filezy: 'None', competitor: 'Limited on free tier' },
-  { feature: 'Files uploaded to server', filezy: 'Never — browser only', competitor: 'Yes, uploaded to cloud' },
-  { feature: 'CAPTCHA', filezy: 'Never', competitor: 'Occasional' },
-  { feature: 'Price for unlimited', filezy: 'Free forever', competitor: '$12/month' },
+  { feature: 'Free tasks per hour', dokly: 'Unlimited', competitor: '2 tasks/hour' },
+  { feature: 'Watermarks on output', dokly: 'Never', competitor: 'Yes, on free tier' },
+  { feature: 'Account required', dokly: 'No', competitor: 'Required for most features' },
+  { feature: 'File size limit (free)', dokly: 'None', competitor: 'Limited on free tier' },
+  { feature: 'Files uploaded to server', dokly: 'Never — browser only', competitor: 'Yes, uploaded to cloud' },
+  { feature: 'CAPTCHA', dokly: 'Never', competitor: 'Occasional' },
+  { feature: 'Price for unlimited', dokly: 'Free forever', competitor: '$12/month' },
 ]
 
 const features = [
   { title: 'Truly Unlimited', description: 'Process as many files as you need. No hourly caps, no daily limits, no cooldowns.' },
   { title: 'No Account Needed', description: 'Jump straight to your tool. No sign-up, no email, no password.' },
-  { title: 'Zero Watermarks', description: 'Every file you download is clean. No Filezy branding ever added to your output.' },
+  { title: 'Zero Watermarks', description: 'Every file you download is clean. No Dokly branding ever added to your output.' },
   { title: 'Browser-Only Processing', description: 'Your files never leave your device. All processing happens locally in your browser.' },
   { title: 'No Paywall', description: 'Every tool is free. No premium tier, no "upgrade to continue" interruptions.' },
   { title: 'Instant Results', description: 'Client-side processing means your files are ready in seconds, not minutes.' },
@@ -46,15 +46,15 @@ export default function SmallpdfAlternativePage() {
         <nav className="text-sm text-muted mb-8">
           <Link href="/" className="hover:text-accent">Home</Link>
           <span className="mx-2">/</span>
-          <span>Filezy vs Smallpdf</span>
+          <span>Dokly vs Smallpdf</span>
         </nav>
 
         {/* Hero */}
         <h1 className="text-3xl font-bold text-text mb-4">
-          Filezy vs Smallpdf: Free, Unlimited PDF Tools Without the Paywall
+          Dokly vs Smallpdf: Free, Unlimited PDF Tools Without the Paywall
         </h1>
         <p className="text-lg text-muted mb-12 max-w-2xl">
-          Smallpdf limits free users to 2 tasks per hour, adds watermarks, and pushes a $12/month subscription. Filezy gives you the same tools — unlimited, free, forever.
+          Smallpdf limits free users to 2 tasks per hour, adds watermarks, and pushes a $12/month subscription. Dokly gives you the same tools — unlimited, free, forever.
         </p>
 
         {/* Comparison Table */}
@@ -65,7 +65,7 @@ export default function SmallpdfAlternativePage() {
               <thead>
                 <tr className="border-b border-border bg-bg">
                   <th className="text-left px-6 py-4 font-semibold text-text">Feature</th>
-                  <th className="text-left px-6 py-4 font-semibold text-accent">Filezy</th>
+                  <th className="text-left px-6 py-4 font-semibold text-accent">Dokly</th>
                   <th className="text-left px-6 py-4 font-semibold text-muted">Smallpdf (Free)</th>
                 </tr>
               </thead>
@@ -73,7 +73,7 @@ export default function SmallpdfAlternativePage() {
                 {comparisonRows.map((row, i) => (
                   <tr key={row.feature} className={i % 2 === 0 ? 'bg-surface' : 'bg-bg'}>
                     <td className="px-6 py-4 text-text font-medium">{row.feature}</td>
-                    <td className="px-6 py-4 text-success font-medium">{row.filezy}</td>
+                    <td className="px-6 py-4 text-success font-medium">{row.dokly}</td>
                     <td className="px-6 py-4 text-muted">{row.competitor}</td>
                   </tr>
                 ))}
@@ -84,7 +84,7 @@ export default function SmallpdfAlternativePage() {
 
         {/* Features Grid */}
         <section className="mb-16">
-          <h2 className="text-xl font-semibold text-text mb-6">Why Filezy is the Better Free Alternative</h2>
+          <h2 className="text-xl font-semibold text-text mb-6">Why Dokly is the Better Free Alternative</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((f) => (
               <div key={f.title} className="bg-surface border border-border rounded-lg p-6">
@@ -99,7 +99,7 @@ export default function SmallpdfAlternativePage() {
         <section className="mb-16 bg-surface border border-border rounded-lg p-6">
           <h2 className="text-xl font-semibold text-text mb-3">Your Files Stay on Your Device</h2>
           <p className="text-muted">
-            Smallpdf uploads your documents to their servers for processing. Filezy is different: every operation — merging, compressing, splitting — runs entirely in your browser using JavaScript. Your files never touch our servers because we don&apos;t have any processing servers. This isn&apos;t a marketing claim; you can verify it yourself by opening your browser&apos;s Network tab while using any Filezy tool.
+            Smallpdf uploads your documents to their servers for processing. Dokly is different: every operation — merging, compressing, splitting — runs entirely in your browser using JavaScript. Your files never touch our servers because we don&apos;t have any processing servers. This isn&apos;t a marketing claim; you can verify it yourself by opening your browser&apos;s Network tab while using any Dokly tool.
           </p>
         </section>
 

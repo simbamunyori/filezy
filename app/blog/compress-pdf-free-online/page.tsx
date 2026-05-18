@@ -2,18 +2,18 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'How to Compress a PDF for Free Online (Without Losing Quality) — Filezy',
+  title: 'How to Compress a PDF for Free Online (Without Losing Quality) — Dokly',
   description:
     'Learn how to reduce PDF file size for free online. No uploads, no account, no quality loss. Compress any PDF instantly in your browser.',
   openGraph: {
     title: 'How to Compress a PDF for Free Online',
     description: 'Reduce PDF file size instantly — no account, no uploads, no quality loss.',
-    url: 'https://filezy.io/blog/compress-pdf-free-online',
-    siteName: 'Filezy',
+    url: 'https://dokly.io/blog/compress-pdf-free-online',
+    siteName: 'Dokly',
     type: 'article',
   },
   alternates: {
-    canonical: 'https://filezy.io/blog/compress-pdf-free-online',
+    canonical: 'https://dokly.io/blog/compress-pdf-free-online',
   },
 }
 
@@ -80,7 +80,7 @@ export default function CompressPdfBlogPage() {
             <ol className="space-y-4 text-muted">
               <li className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 bg-accent text-white text-xs font-bold rounded-full flex items-center justify-center">1</span>
-                <span>Open the <Link href="/tools/compress-pdf" className="text-accent hover:underline">Compress PDF tool</Link> on Filezy.</span>
+                <span>Open the <Link href="/tools/compress-pdf" className="text-accent hover:underline">Compress PDF tool</Link> on Dokly.</span>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 bg-accent text-white text-xs font-bold rounded-full flex items-center justify-center">2</span>
@@ -110,7 +110,7 @@ export default function CompressPdfBlogPage() {
           <section>
             <h2 className="text-xl font-semibold text-text mt-10 mb-4">A Note on Privacy</h2>
             <p className="text-muted leading-relaxed">
-              Most online PDF compressors upload your file to a remote server, run the compression there, and send the result back. Filezy works differently: the entire compression process happens in your browser using JavaScript. Your document never touches our servers — or anyone else&apos;s. For sensitive documents (contracts, medical records, financial statements), this matters.
+              Most online PDF compressors upload your file to a remote server, run the compression there, and send the result back. Dokly works differently: the entire compression process happens in your browser using JavaScript. Your document never touches our servers — or anyone else&apos;s. For sensitive documents (contracts, medical records, financial statements), this matters.
             </p>
           </section>
 

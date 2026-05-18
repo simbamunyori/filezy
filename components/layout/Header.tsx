@@ -13,7 +13,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-1 shrink-0">
             <span className="text-base font-bold text-text tracking-tight">
-              Filezy
+              Dokly
               <span className="text-accent">.</span>
             </span>
           </Link>

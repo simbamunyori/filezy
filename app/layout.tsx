@@ -17,12 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Filezy — Every Tool You Need. Free. Forever.',
+  title: 'Dokly — Every Tool You Need. Free. Forever.',
   description:
     'Free online tools for PDF, image, and text processing. No limits, no watermarks, no account required. All processing happens in your browser.',
-  metadataBase: new URL('https://filezy.io'),
+  metadataBase: new URL('https://dokly.io'),
   openGraph: {
-    siteName: 'Filezy',
+    siteName: 'Dokly',
     type: 'website',
   },
 }

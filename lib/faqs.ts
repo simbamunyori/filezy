@@ -46,7 +46,7 @@ const toolFaqs: Record<string, FAQ[]> = {
     },
     {
       question: 'Is Merge PDF free with no watermarks?',
-      answer: 'Yes. Completely free, unlimited, and the output PDF has no watermarks added by Filezy.',
+      answer: 'Yes. Completely free, unlimited, and the output PDF has no watermarks added by Dokly.',
     },
   ],
   'compress-pdf': [

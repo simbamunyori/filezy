@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <Link href="/" className="text-sm font-bold text-text">
-              Filezy<span className="text-accent">.</span>
+              Dokly<span className="text-accent">.</span>
             </Link>
             <p className="text-xs text-muted mt-1">
               Free online tools for everyone
