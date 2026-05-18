@@ -30,6 +30,17 @@ export default function RemoveBackground() {
 
   const handleRemove = async () => {
     if (!file) return
+
+    // onnxruntime-web requires SharedArrayBuffer which is only available in
+    // cross-origin isolated contexts (COOP + COEP headers must be set).
+    if (typeof window !== 'undefined' && !window.crossOriginIsolated) {
+      setError(
+        'Background removal requires cross-origin isolation. ' +
+        'Please reload the page — if the problem persists, try Chrome or Firefox.'
+      )
+      return
+    }
+
     setProcessing(true)
     setError(null)
     setProgress(0)
@@ -37,12 +48,16 @@ export default function RemoveBackground() {
     try {
       const { removeBackground } = await import('@imgly/background-removal')
 
-      setProgress(30)
-      setStatusText('Analyzing image…')
+      setProgress(10)
+      setStatusText('AI model loaded. Analyzing image…')
 
       const blob = await removeBackground(file, {
-        progress: (key, current, total) => {
-          if (key === 'compute:inference') {
+        progress: (key: string, current: number, total: number) => {
+          if (key.startsWith('fetch:')) {
+            const pct = total > 0 ? Math.round((current / total) * 20) : 0
+            setProgress(10 + pct)
+            setStatusText('Downloading AI model…')
+          } else if (key === 'compute:inference') {
             setProgress(30 + Math.round((current / total) * 60))
             setStatusText('Removing background…')
           }
@@ -55,8 +70,13 @@ export default function RemoveBackground() {
       const url = URL.createObjectURL(blob)
       setResult({ url, size: blob.size })
     } catch (err) {
-      setError('Failed to remove background. Please try a JPG or PNG image.')
-      console.error(err)
+      const msg = err instanceof Error ? err.message : String(err)
+      if (msg.toLowerCase().includes('sharedarraybuffer') || msg.toLowerCase().includes('wasm')) {
+        setError('Failed to load AI model. Please reload the page and try again, or use Chrome/Firefox.')
+      } else {
+        setError('Failed to remove background. Please try a JPG or PNG image.')
+      }
+      console.error('[RemoveBackground]', err)
     } finally {
       setProcessing(false)
     }
