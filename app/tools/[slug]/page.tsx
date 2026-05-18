@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { tools } from '@/lib/tools'
 import ToolIcon from '@/components/ui/ToolIcon'
+import ToolArea from '@/components/tools/ToolArea'
 
 export async function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }))
@@ -81,17 +82,20 @@ export default async function ToolPage({
         Your files never leave your device. All processing happens in your browser.
       </div>
 
-      {/* Tool area placeholder — replaced by tool-specific component in later phases */}
-      <div className="bg-surface border border-border rounded-lg p-8 text-center">
-        <div className="text-muted mb-2">
-          <ToolIcon icon={tool.icon} size={40} className="mx-auto text-border" />
-        </div>
-        <p className="text-sm text-muted mt-4">
-          <strong className="text-text">{tool.name}</strong> — coming in Phase 2.
-        </p>
-        <p className="text-xs text-muted mt-1">
-          Accepts: {tool.inputFormats.join(', ')} → {tool.outputFormat}
-        </p>
+      {/* Tool area — live tool component or coming-soon placeholder */}
+      <div className="bg-surface border border-border rounded-lg p-6">
+        <ToolArea slug={slug} />
+        {!['merge-pdf','compress-pdf','split-pdf','rotate-pdf','pdf-to-jpg','jpg-to-pdf','unlock-pdf','protect-pdf','watermark-pdf'].includes(slug) && (
+          <div className="text-center py-8">
+            <ToolIcon icon={tool.icon} size={40} className="mx-auto text-border mb-3" />
+            <p className="text-sm text-muted">
+              <strong className="text-text">{tool.name}</strong> — coming soon.
+            </p>
+            <p className="text-xs text-muted mt-1">
+              Accepts: {tool.inputFormats.join(', ')} → {tool.outputFormat}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* SEO content */}
