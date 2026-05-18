@@ -5,13 +5,18 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // SharedArrayBuffer (required by onnxruntime-web / @imgly/background-removal)
-        // is only available in cross-origin isolated contexts.
-        source: '/tools/remove-background',
+        // Apply COOP + COEP to every route so that window.crossOriginIsolated is
+        // true regardless of whether the user hard-navigated or arrived via a
+        // Next.js client-side <Link>. If only the remove-background page had these
+        // headers, a user arriving via soft navigation (e.g. home → tool) would
+        // inherit the home page's document context (no COOP) and crossOriginIsolated
+        // would be false, making SharedArrayBuffer unavailable for onnxruntime-web.
+        //
+        // COEP: credentialless allows cross-origin fetches (model CDN, WASM assets)
+        // without requiring CORP headers on those servers — unlike require-corp.
+        source: '/(.*)',
         headers: [
           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
-          // 'credentialless' allows cross-origin fetches (model CDN) without CORP headers,
-          // unlike 'require-corp' which would block them.
           { key: 'Cross-Origin-Embedder-Policy', value: 'credentialless' },
         ],
       },

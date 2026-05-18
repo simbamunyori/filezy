@@ -31,16 +31,6 @@ export default function RemoveBackground() {
   const handleRemove = async () => {
     if (!file) return
 
-    // onnxruntime-web requires SharedArrayBuffer which is only available in
-    // cross-origin isolated contexts (COOP + COEP headers must be set).
-    if (typeof window !== 'undefined' && !window.crossOriginIsolated) {
-      setError(
-        'Background removal requires cross-origin isolation. ' +
-        'Please reload the page — if the problem persists, try Chrome or Firefox.'
-      )
-      return
-    }
-
     setProcessing(true)
     setError(null)
     setProgress(0)
@@ -71,12 +61,18 @@ export default function RemoveBackground() {
       setResult({ url, size: blob.size })
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
-      if (msg.toLowerCase().includes('sharedarraybuffer') || msg.toLowerCase().includes('wasm')) {
-        setError('Failed to load AI model. Please reload the page and try again, or use Chrome/Firefox.')
-      } else {
-        setError('Failed to remove background. Please try a JPG or PNG image.')
-      }
       console.error('[RemoveBackground]', err)
+      // Surface the real error detail so failures are diagnosable.
+      if (!window.crossOriginIsolated) {
+        setError(
+          'Cross-origin isolation is not active. Try opening this page directly ' +
+          '(not by clicking a link) or doing a hard refresh (Ctrl+Shift+R).'
+        )
+      } else if (msg.toLowerCase().includes('fetch') || msg.toLowerCase().includes('network')) {
+        setError('Could not download the AI model. Check your internet connection and try again.')
+      } else {
+        setError(`Background removal failed: ${msg || 'unknown error'}. Try a JPG or PNG image.`)
+      }
     } finally {
       setProcessing(false)
     }
