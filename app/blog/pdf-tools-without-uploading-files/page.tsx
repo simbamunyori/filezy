@@ -2,18 +2,18 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "Why the Best PDF Tools Don't Upload Your Files — Filezy",
+  title: "Why the Best PDF Tools Don't Upload Your Files — Dokly",
   description:
     'Most online PDF tools send your documents to remote servers. Learn why that is a privacy risk and how browser-based PDF tools solve the problem without sacrificing functionality.',
   openGraph: {
     title: "Why the Best PDF Tools Don't Upload Your Files",
     description: 'Your PDFs contain sensitive data. Here\'s why browser-based processing is safer.',
-    url: 'https://filezy.io/blog/pdf-tools-without-uploading-files',
-    siteName: 'Filezy',
+    url: 'https://dokly.io/blog/pdf-tools-without-uploading-files',
+    siteName: 'Dokly',
     type: 'article',
   },
   alternates: {
-    canonical: 'https://filezy.io/blog/pdf-tools-without-uploading-files',
+    canonical: 'https://dokly.io/blog/pdf-tools-without-uploading-files',
   },
 }
 
@@ -79,7 +79,7 @@ export default function PdfToolsPrivacyBlogPage() {
               The last few years changed what&apos;s possible in a browser. WebAssembly allows near-native performance for compiled languages like C and Rust, running directly in the browser sandbox. JavaScript PDF libraries like <code className="text-sm bg-bg px-1.5 py-0.5 rounded border border-border">pdf-lib</code> provide complete PDF creation and manipulation in pure JavaScript. The tools that previously required a server now run entirely client-side.
             </p>
             <p className="text-muted leading-relaxed mb-4">
-              When you use Filezy to merge, compress, or split a PDF, the work is done by JavaScript running in your browser tab. Your file is read from your local disk into browser memory, processed there, and the result is written back to your local disk. At no point does any data leave your device. You can verify this by opening your browser&apos;s Network tab (F12 → Network) while processing a file — you&apos;ll see no outbound requests containing your file data.
+              When you use Dokly to merge, compress, or split a PDF, the work is done by JavaScript running in your browser tab. Your file is read from your local disk into browser memory, processed there, and the result is written back to your local disk. At no point does any data leave your device. You can verify this by opening your browser&apos;s Network tab (F12 → Network) while processing a file — you&apos;ll see no outbound requests containing your file data.
             </p>
             <p className="text-muted leading-relaxed">
               This architecture has a useful side effect: it&apos;s free to operate. Processing a million PDFs costs us nothing in compute — your CPU is doing all the work. That&apos;s what makes unlimited free genuinely sustainable, not a marketing claim that will eventually require a paywall.
@@ -108,7 +108,7 @@ export default function PdfToolsPrivacyBlogPage() {
         {/* CTA */}
         <div className="mt-12 p-6 bg-surface border border-border rounded-lg text-center">
           <p className="font-semibold text-text mb-2">Process PDFs without uploading them</p>
-          <p className="text-sm text-muted mb-4">All Filezy PDF tools run in your browser. Your files never leave your device.</p>
+          <p className="text-sm text-muted mb-4">All Dokly PDF tools run in your browser. Your files never leave your device.</p>
           <Link
             href="/tools"
             className="inline-block bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-md transition-colors"

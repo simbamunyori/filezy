@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Blog — Filezy',
+  title: 'Blog — Dokly',
   description:
     'Tips, guides, and how-tos for working with PDFs, images, and files — all free tools, all in your browser.',
   alternates: {
-    canonical: 'https://filezy.io/blog',
+    canonical: 'https://dokly.io/blog',
   },
 }
 

@@ -1,4 +1,4 @@
-# FILEZY — SEO & Backlink Strategy
+# DOKLY — SEO & Backlink Strategy
 ## Ranking on Page 1 Without a Budget
 
 ---
@@ -58,7 +58,7 @@ const processPDF = async () => {
 **Measure these before and after each phase:**
 ```bash
 # Run Lighthouse in Chrome DevTools
-# Or: npx lighthouse https://filezy.io --output html
+# Or: npx lighthouse https://dokly.io --output html
 # Target: Performance > 90, SEO = 100, Accessibility > 95
 ```
 
@@ -75,8 +75,8 @@ export function ToolSchema({ tool }: { tool: Tool }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": `Filezy ${tool.name}`,
-    "url": `https://filezy.io/tools/${tool.slug}`,
+    "name": `Dokly ${tool.name}`,
+    "url": `https://dokly.io/tools/${tool.slug}`,
     "description": tool.seoDescription,
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any",
@@ -113,7 +113,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload your file",
-      "text": `Click or drag your file into the upload area on Filezy's ${tool.name} tool.`
+      "text": `Click or drag your file into the upload area on Dokly's ${tool.name} tool.`
     },
     {
       "@type": "HowToStep",
@@ -127,7 +127,7 @@ const howToSchema = {
     }
   ],
   "totalTime": "PT30S",
-  "tool": { "@type": "HowToTool", "name": "Filezy" }
+  "tool": { "@type": "HowToTool", "name": "Dokly" }
 }
 ```
 
@@ -142,7 +142,7 @@ const faqSchema = {
       "name": `Is the ${tool.name} tool really free?`,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Filezy is completely free with no task limits, no watermarks, and no account required. You can use every tool as many times as you want."
+        "text": "Yes. Dokly is completely free with no task limits, no watermarks, and no account required. You can use every tool as many times as you want."
       }
     },
     {
@@ -158,7 +158,7 @@ const faqSchema = {
       "name": `What is the file size limit for ${tool.name}?`,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Filezy has no file size limits. You can process files of any size, as many times as you need, completely free."
+        "text": "Dokly has no file size limits. You can process files of any size, as many times as you need, completely free."
       }
     }
   ]
@@ -170,13 +170,13 @@ const faqSchema = {
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Filezy",
-  "url": "https://filezy.io",
-  "logo": "https://filezy.io/logo.png",
+  "name": "Dokly",
+  "url": "https://dokly.io",
+  "logo": "https://dokly.io/logo.png",
   "description": "Free online file tools for PDF, images, and text. No limits, no watermarks.",
   "sameAs": [
-    "https://twitter.com/filezyio",
-    "https://github.com/simbamunyori/filezy"
+    "https://twitter.com/doklyio",
+    "https://github.com/simbamunyori/dokly"
   ]
 }
 ```
@@ -219,12 +219,12 @@ Google's understanding of site structure.
 Clean, keyword-rich URLs — already in the CLAUDE.md but emphasised here:
 
 ```
-✓ filezy.io/tools/merge-pdf
-✓ filezy.io/tools/compress-pdf-online
-✓ filezy.io/tools/remove-background-free
+✓ dokly.io/tools/merge-pdf
+✓ dokly.io/tools/compress-pdf-online
+✓ dokly.io/tools/remove-background-free
 
-✗ filezy.io/tools/tool?id=123
-✗ filezy.io/t/merge
+✗ dokly.io/tools/tool?id=123
+✗ dokly.io/t/merge
 ```
 
 ---
@@ -316,10 +316,10 @@ These are high-intent users actively looking to switch.
 Build these pages after launch:
 
 ```
-filezy.io/alternatives/smallpdf
-filezy.io/alternatives/ilovepdf
-filezy.io/alternatives/adobe-acrobat
-filezy.io/alternatives/tinywow
+dokly.io/alternatives/smallpdf
+dokly.io/alternatives/ilovepdf
+dokly.io/alternatives/adobe-acrobat
+dokly.io/alternatives/tinywow
 
 Target searches:
 "smallpdf alternative free"       — 40K/month
@@ -329,9 +329,9 @@ Target searches:
 ```
 
 Each page structure:
-- H1: "Best Free Smallpdf Alternative — Filezy"
+- H1: "Best Free Smallpdf Alternative — Dokly"
 - Comparison table (feature by feature)
-- "Why users switch to Filezy" section
+- "Why users switch to Dokly" section
 - CTA: "Try the [specific tool] free →"
 
 ---
@@ -367,7 +367,7 @@ Submit to all of these within the first week of launch:
 
 **Process for each:**
 1. Create a free account on the directory
-2. Submit Filezy with: name, URL, description (use the one from App Store listing),
+2. Submit Dokly with: name, URL, description (use the one from App Store listing),
    screenshots, and category (PDF tools / Image tools / Productivity)
 3. Track which ones approve — note the backlink in a spreadsheet
 
@@ -401,7 +401,7 @@ no account. Would love feedback from this community."
 Search Reddit for people complaining about Smallpdf limits, iLovePDF watermarks,
 Adobe pricing. When you find them, post a genuinely helpful reply:
 ```
-"If you're hitting Smallpdf's limit, I just launched Filezy (filezy.io) —
+"If you're hitting Smallpdf's limit, I just launched Dokly (dokly.io) —
 completely free, no task limits, no watermarks. Disclaimer: I built it."
 ```
 This gets upvotes, stays up permanently, and drives ongoing traffic.
@@ -417,10 +417,10 @@ from people who blog about it.
 ```
 Show HN: I built a free file tool suite (PDF/images) that works 100% in your browser
 
-filezy.io
+dokly.io
 
 Most online PDF tools charge $9–20/month or watermark your output.
-I built Filezy because I was tired of the constant "upgrade to continue" screens.
+I built Dokly because I was tired of the constant "upgrade to continue" screens.
 
 All processing happens in your browser using pdf-lib and browser-image-compression.
 Your files never touch a server. Completely free with no task limits.
@@ -476,9 +476,9 @@ Each published post = a backlink in your author bio or within the article.
 3. UX story — "Why we removed the upload progress bar and users loved it"
 4. Comparison — "We benchmarked every free PDF tool — here's what we found"
 
-**Process:** Write the article, publish it to Filezy's own blog first
+**Process:** Write the article, publish it to Dokly's own blog first
 (establishes it as original content), then submit to external publications
-as a repost with canonical URL pointing back to filezy.io.
+as a repost with canonical URL pointing back to dokly.io.
 
 ### 3.6 HARO (Help A Reporter Out)
 
@@ -495,7 +495,7 @@ file management, free software, SaaS pricing, browser technology
 ```
 Hi [Reporter name],
 
-I'm the founder of Filezy (filezy.io), a free online tool suite
+I'm the founder of Dokly (dokly.io), a free online tool suite
 for PDF and image processing. [Answer their specific question in 2–3 sentences].
 
 [Add one relevant stat or insight that makes your quote useful]
@@ -503,7 +503,7 @@ for PDF and image processing. [Answer their specific question in 2–3 sentences
 Happy to provide more detail or screenshots.
 Best,
 Simba Marima
-Founder, Filezy | simba@filezy.io
+Founder, Dokly | simba@dokly.io
 ```
 
 Aim for 5–10 HARO responses per week. Expect 1–2 placements per month.
@@ -511,7 +511,7 @@ Aim for 5–10 HARO responses per week. Expect 1–2 placements per month.
 ### 3.7 Embed Strategy
 
 Create embeddable versions of simple tools that other sites can add to theirs.
-When they embed it, they link back to Filezy.
+When they embed it, they link back to Dokly.
 
 **Best candidates for embedding:**
 - Word Count tool — bloggers and writing sites love embedding these
@@ -519,14 +519,14 @@ When they embed it, they link back to Filezy.
 
 **How to implement:**
 ```html
-<!-- Embed code Filezy provides -->
+<!-- Embed code Dokly provides -->
 <iframe
-  src="https://filezy.io/embed/word-count"
+  src="https://dokly.io/embed/word-count"
   width="100%"
   height="400"
   frameborder="0"
 ></iframe>
-<p>Powered by <a href="https://filezy.io">Filezy</a></p>
+<p>Powered by <a href="https://dokly.io">Dokly</a></p>
 ```
 
 Reach out to writing blogs, grammar sites, and content creation tools
@@ -538,7 +538,7 @@ offering the free embed. Each site that uses it = a backlink.
 
 ### 4.1 Blog (add to Next.js app)
 
-Route: `filezy.io/blog`
+Route: `dokly.io/blog`
 
 **Why a blog matters for SEO:**
 Each blog post is another page that can rank.
@@ -560,7 +560,7 @@ that eventually converts to tool users.
 
 **Post frequency:** 2 posts per month minimum
 **Length:** 1,200–2,000 words per post
-**Structure:** Problem → Solution (using Filezy) → Step by step → FAQ
+**Structure:** Problem → Solution (using Dokly) → Step by step → FAQ
 
 **Internal linking in posts:**
 Every blog post must link to at least 2 relevant tool pages.
@@ -577,7 +577,7 @@ Benefits:
 - YouTube videos often rank on page 1 of Google above websites
 - Embedded video increases dwell time on your page (positive ranking signal)
 - YouTube channel = another discovery channel
-- Video description links back to filezy.io = backlink from DA 100
+- Video description links back to dokly.io = backlink from DA 100
 
 ---
 
@@ -625,7 +625,7 @@ when results feel invisible.
 
 - [ ] Submit sitemap to Google Search Console
 - [ ] Submit sitemap to Bing Webmaster Tools (free, often forgotten, real traffic)
-- [ ] Create Twitter/X account: @filezyio — tweet launch
+- [ ] Create Twitter/X account: @doklyio — tweet launch
 - [ ] Post on r/sideprojects
 - [ ] Post on r/webdev
 - [ ] Submit to Product Hunt (schedule for Tuesday if possible)

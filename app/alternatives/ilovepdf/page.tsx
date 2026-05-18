@@ -2,30 +2,30 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Filezy vs iLovePDF: Unlimited Free PDF Tools With No File Size Cap',
+  title: 'Dokly vs iLovePDF: Unlimited Free PDF Tools With No File Size Cap',
   description:
-    'Compare Filezy and iLovePDF. Filezy has no 15 MB file size limit, no daily task caps, no ads interrupting your workflow — just unlimited free PDF tools.',
+    'Compare Dokly and iLovePDF. Dokly has no 15 MB file size limit, no daily task caps, no ads interrupting your workflow — just unlimited free PDF tools.',
   openGraph: {
-    title: 'Filezy vs iLovePDF — No File Size Cap, No Limits',
+    title: 'Dokly vs iLovePDF — No File Size Cap, No Limits',
     description:
-      'iLovePDF caps free uploads at 15 MB and restricts daily tasks. Filezy removes all those limits for free.',
-    url: 'https://filezy.io/alternatives/ilovepdf',
-    siteName: 'Filezy',
+      'iLovePDF caps free uploads at 15 MB and restricts daily tasks. Dokly removes all those limits for free.',
+    url: 'https://dokly.io/alternatives/ilovepdf',
+    siteName: 'Dokly',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://filezy.io/alternatives/ilovepdf',
+    canonical: 'https://dokly.io/alternatives/ilovepdf',
   },
 }
 
 const comparisonRows = [
-  { feature: 'File size limit (free)', filezy: 'None', competitor: '15 MB per file' },
-  { feature: 'Daily task limit', filezy: 'Unlimited', competitor: 'Restricted on free tier' },
-  { feature: 'Ad interruptions', filezy: 'One ad on result screen only', competitor: 'Heavy ad placement throughout' },
-  { feature: 'Account required', filezy: 'No', competitor: 'Required for full access' },
-  { feature: 'Files uploaded to server', filezy: 'Never — browser only', competitor: 'Uploaded to iLovePDF servers' },
-  { feature: 'Watermarks on free output', filezy: 'Never', competitor: 'Added on some free operations' },
-  { feature: 'Price to remove limits', filezy: 'Free forever', competitor: '$6.61/month' },
+  { feature: 'File size limit (free)', dokly: 'None', competitor: '15 MB per file' },
+  { feature: 'Daily task limit', dokly: 'Unlimited', competitor: 'Restricted on free tier' },
+  { feature: 'Ad interruptions', dokly: 'One ad on result screen only', competitor: 'Heavy ad placement throughout' },
+  { feature: 'Account required', dokly: 'No', competitor: 'Required for full access' },
+  { feature: 'Files uploaded to server', dokly: 'Never — browser only', competitor: 'Uploaded to iLovePDF servers' },
+  { feature: 'Watermarks on free output', dokly: 'Never', competitor: 'Added on some free operations' },
+  { feature: 'Price to remove limits', dokly: 'Free forever', competitor: '$6.61/month' },
 ]
 
 const features = [
@@ -46,15 +46,15 @@ export default function IlovepdfAlternativePage() {
         <nav className="text-sm text-muted mb-8">
           <Link href="/" className="hover:text-accent">Home</Link>
           <span className="mx-2">/</span>
-          <span>Filezy vs iLovePDF</span>
+          <span>Dokly vs iLovePDF</span>
         </nav>
 
         {/* Hero */}
         <h1 className="text-3xl font-bold text-text mb-4">
-          Filezy vs iLovePDF: Unlimited Free PDF Tools With No File Size Cap
+          Dokly vs iLovePDF: Unlimited Free PDF Tools With No File Size Cap
         </h1>
         <p className="text-lg text-muted mb-12 max-w-2xl">
-          iLovePDF&apos;s free tier caps file sizes at 15 MB and limits daily tasks. Filezy removes every restriction — no file size limits, no daily caps, no account required.
+          iLovePDF&apos;s free tier caps file sizes at 15 MB and limits daily tasks. Dokly removes every restriction — no file size limits, no daily caps, no account required.
         </p>
 
         {/* Comparison Table */}
@@ -65,7 +65,7 @@ export default function IlovepdfAlternativePage() {
               <thead>
                 <tr className="border-b border-border bg-bg">
                   <th className="text-left px-6 py-4 font-semibold text-text">Feature</th>
-                  <th className="text-left px-6 py-4 font-semibold text-accent">Filezy</th>
+                  <th className="text-left px-6 py-4 font-semibold text-accent">Dokly</th>
                   <th className="text-left px-6 py-4 font-semibold text-muted">iLovePDF (Free)</th>
                 </tr>
               </thead>
@@ -73,7 +73,7 @@ export default function IlovepdfAlternativePage() {
                 {comparisonRows.map((row, i) => (
                   <tr key={row.feature} className={i % 2 === 0 ? 'bg-surface' : 'bg-bg'}>
                     <td className="px-6 py-4 text-text font-medium">{row.feature}</td>
-                    <td className="px-6 py-4 text-success font-medium">{row.filezy}</td>
+                    <td className="px-6 py-4 text-success font-medium">{row.dokly}</td>
                     <td className="px-6 py-4 text-muted">{row.competitor}</td>
                   </tr>
                 ))}
@@ -84,7 +84,7 @@ export default function IlovepdfAlternativePage() {
 
         {/* Features Grid */}
         <section className="mb-16">
-          <h2 className="text-xl font-semibold text-text mb-6">Why Filezy is the Better Free Alternative</h2>
+          <h2 className="text-xl font-semibold text-text mb-6">Why Dokly is the Better Free Alternative</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((f) => (
               <div key={f.title} className="bg-surface border border-border rounded-lg p-6">
@@ -102,7 +102,7 @@ export default function IlovepdfAlternativePage() {
             A 15 MB file size cap sounds reasonable until you try to compress a scanned document or merge a presentation with embedded images. Real-world PDFs routinely exceed this limit, turning a &ldquo;free&rdquo; tool into a constant paywall prompt.
           </p>
           <p className="text-muted">
-            Filezy has no file size limit because processing happens in your browser. Your computer&apos;s memory is the only constraint — and modern devices handle large PDFs without issue. You can merge a 500 MB PDF collection just as easily as a 2 MB one.
+            Dokly has no file size limit because processing happens in your browser. Your computer&apos;s memory is the only constraint — and modern devices handle large PDFs without issue. You can merge a 500 MB PDF collection just as easily as a 2 MB one.
           </p>
         </section>
 

@@ -2,18 +2,18 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'How to Remove the Background From Any Image — Free, No App Required — Filezy',
+  title: 'How to Remove the Background From Any Image — Free, No App Required — Dokly',
   description:
     'Remove image backgrounds for free using AI — no Photoshop, no subscription, no uploads. Works entirely in your browser in seconds.',
   openGraph: {
     title: 'Remove Image Background Free — No App, No Upload',
     description: 'AI background removal in your browser. Free, instant, no account needed.',
-    url: 'https://filezy.io/blog/remove-background-from-image-free',
-    siteName: 'Filezy',
+    url: 'https://dokly.io/blog/remove-background-from-image-free',
+    siteName: 'Dokly',
     type: 'article',
   },
   alternates: {
-    canonical: 'https://filezy.io/blog/remove-background-from-image-free',
+    canonical: 'https://dokly.io/blog/remove-background-from-image-free',
   },
 }
 
@@ -96,7 +96,7 @@ export default function RemoveBackgroundBlogPage() {
           <section>
             <h2 className="text-xl font-semibold text-text mt-10 mb-4">Why This Runs in Your Browser</h2>
             <p className="text-muted leading-relaxed">
-              Filezy uses <code className="text-sm bg-bg px-1.5 py-0.5 rounded border border-border">@imgly/background-removal</code>, a library that runs the segmentation model entirely in WebAssembly inside your browser. No image data is sent to a server. For anyone processing photos of people, documents, or confidential product images, this is a meaningful privacy advantage over services that process your photos on their cloud infrastructure.
+              Dokly uses <code className="text-sm bg-bg px-1.5 py-0.5 rounded border border-border">@imgly/background-removal</code>, a library that runs the segmentation model entirely in WebAssembly inside your browser. No image data is sent to a server. For anyone processing photos of people, documents, or confidential product images, this is a meaningful privacy advantage over services that process your photos on their cloud infrastructure.
             </p>
           </section>
 

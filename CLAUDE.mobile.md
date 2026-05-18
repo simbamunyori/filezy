@@ -1,22 +1,22 @@
-# CLAUDE.mobile.md — Filezy Mobile App Brief
+# CLAUDE.mobile.md — Dokly Mobile App Brief
 ## iOS & Android — React Native + Expo
 
 ---
 
 ## 1. OVERVIEW
 
-**App Name:** Filezy
+**App Name:** Dokly
 **Platforms:** iOS and Android
 **Stack:** React Native + Expo (managed workflow)
 **Store listing tagline:** "Free PDF & image tools. No limits. Works offline."
 
-### Why mobile matters for Filezy
+### Why mobile matters for Dokly
 
 The single biggest advantage over web-only competitors:
 
 **Native Share Sheet Integration.**
 User receives a PDF via WhatsApp, Gmail, or any app →
-taps the Share button → selects Filezy →
+taps the Share button → selects Dokly →
 file is instantly compressed/merged/converted.
 This workflow is impossible on a browser-only tool.
 
@@ -39,7 +39,7 @@ Other mobile advantages:
 - **TypeScript** throughout
 
 ### Shared code from web app
-The following from `filezy/lib/` can be imported directly:
+The following from `dokly/lib/` can be imported directly:
 - `lib/tools.ts` — tool definitions and metadata
 - `lib/text.ts` — all text processing functions (pure JS, no browser APIs)
 
@@ -65,7 +65,7 @@ PDF and image processing needs React Native specific libraries
 ### Monorepo structure
 The web and mobile apps share a monorepo:
 ```
-filezy/
+dokly/
 ├── apps/
 │   ├── web/          ← Next.js web app (existing)
 │   └── mobile/       ← React Native Expo app (this brief)
@@ -83,7 +83,7 @@ Use **Turborepo** to manage the monorepo. Claude Code should set this up.
 
 ### Principle
 The mobile app must feel like a native app, not a website wrapper.
-Same brand identity as web (Filezy, electric blue, clean whites) but
+Same brand identity as web (Dokly, electric blue, clean whites) but
 adapted for touch: larger tap targets, bottom navigation, gesture support.
 
 ### Color Palette
@@ -184,7 +184,7 @@ mobile/app/
 This is what makes the mobile app uniquely powerful.
 
 When a user receives a PDF or image in any app (WhatsApp, Gmail, Files, Safari)
-and taps Share → Filezy, the app opens on the relevant tool screen
+and taps Share → Dokly, the app opens on the relevant tool screen
 with the file pre-loaded and ready to process.
 
 ### Implementation
@@ -371,13 +371,13 @@ Mobile generates 2–3x more ad revenue per user than web.
 
 ### App Store Listing Copy
 
-**App Name:** Filezy — PDF & Image Tools
+**App Name:** Dokly — PDF & Image Tools
 
 **Subtitle (iOS):** Free. Unlimited. No Watermarks.
 
 **Description:**
 ```
-Filezy gives you every tool you need to work with PDF and image files —
+Dokly gives you every tool you need to work with PDF and image files —
 completely free, with no limits and no watermarks.
 
 PDF TOOLS
@@ -400,7 +400,7 @@ TEXT TOOLS
 • Diff checker
 • Base64 encoder
 
-WHY FILEZY?
+WHY DOKLY?
 ✓ No account required — ever
 ✓ No task limits — process as many files as you want
 ✓ No watermarks on output
@@ -465,7 +465,7 @@ Pure JS — import from packages/core, just build the UI:
 **Icon:** Blue square (#2563EB), white "f" lettermark in Geist Bold
 Size: 1024×1024px PNG (Expo generates all required sizes)
 
-**Splash screen:** White background, Filezy logo centered,
+**Splash screen:** White background, Dokly logo centered,
 electric blue accent bar at bottom
 Duration: instant (no artificial delay)
 

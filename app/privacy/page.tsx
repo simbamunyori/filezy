@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Filezy',
-  description: 'Filezy privacy policy. Your files are processed in your browser and never uploaded to any server.',
+  title: 'Privacy Policy — Dokly',
+  description: 'Dokly privacy policy. Your files are processed in your browser and never uploaded to any server.',
 }
 
 export default function PrivacyPage() {
@@ -11,7 +11,7 @@ export default function PrivacyPage() {
       <h1 className="text-2xl font-bold text-text mb-6">Privacy Policy</h1>
       <div className="space-y-4 text-sm text-muted leading-relaxed">
         <p>
-          <strong className="text-text">Your files never leave your device.</strong> All processing on Filezy happens
+          <strong className="text-text">Your files never leave your device.</strong> All processing on Dokly happens
           entirely in your browser using client-side JavaScript. No files are uploaded to any server.
         </p>
         <p>

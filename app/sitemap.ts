@@ -3,7 +3,7 @@ import { tools } from '@/lib/tools'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const toolPages = tools.map((tool) => ({
-    url: `https://filezy.io/tools/${tool.slug}`,
+    url: `https://dokly.io/tools/${tool.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
@@ -11,68 +11,68 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: 'https://filezy.io',
+      url: 'https://dokly.io',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: 'https://filezy.io/tools',
+      url: 'https://dokly.io/tools',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     ...toolPages,
     {
-      url: 'https://filezy.io/privacy',
+      url: 'https://dokly.io/privacy',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: 'https://filezy.io/about',
+      url: 'https://dokly.io/about',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: 'https://filezy.io/blog',
+      url: 'https://dokly.io/blog',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: 'https://filezy.io/blog/compress-pdf-free-online',
+      url: 'https://dokly.io/blog/compress-pdf-free-online',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: 'https://filezy.io/blog/remove-background-from-image-free',
+      url: 'https://dokly.io/blog/remove-background-from-image-free',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: 'https://filezy.io/blog/pdf-tools-without-uploading-files',
+      url: 'https://dokly.io/blog/pdf-tools-without-uploading-files',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: 'https://filezy.io/alternatives/smallpdf',
+      url: 'https://dokly.io/alternatives/smallpdf',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://filezy.io/alternatives/ilovepdf',
+      url: 'https://dokly.io/alternatives/ilovepdf',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://filezy.io/alternatives/tinywow',
+      url: 'https://dokly.io/alternatives/tinywow',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

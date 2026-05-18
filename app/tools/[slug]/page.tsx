@@ -21,17 +21,17 @@ export async function generateMetadata({
   if (!tool) return {}
 
   return {
-    title: `${tool.name} — Free Online Tool | Filezy`,
+    title: `${tool.name} — Free Online Tool | Dokly`,
     description: `${tool.seoDescription} No limits, no watermarks, no account required. Completely free and works in your browser.`,
     openGraph: {
-      title: `${tool.name} — Free & Unlimited | Filezy`,
+      title: `${tool.name} — Free & Unlimited | Dokly`,
       description: tool.seoDescription,
-      url: `https://filezy.io/tools/${tool.slug}`,
-      siteName: 'Filezy',
+      url: `https://dokly.io/tools/${tool.slug}`,
+      siteName: 'Dokly',
       type: 'website',
     },
     alternates: {
-      canonical: `https://filezy.io/tools/${tool.slug}`,
+      canonical: `https://dokly.io/tools/${tool.slug}`,
     },
   }
 }
@@ -135,7 +135,7 @@ export default async function ToolPage({
 
         <section>
           <h2 className="text-base font-bold text-text mb-3">
-            Why use Filezy for {tool.name.toLowerCase()}?
+            Why use Dokly for {tool.name.toLowerCase()}?
           </h2>
           <ul className="space-y-2 text-sm text-muted list-disc list-inside">
             <li>Completely free — no task limits, no watermarks, no paywall.</li>

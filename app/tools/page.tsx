@@ -3,9 +3,9 @@ import ToolCard from '@/components/ui/ToolCard'
 import { tools, toolsByCategory, categoryLabels, type ToolCategory } from '@/lib/tools'
 
 export const metadata: Metadata = {
-  title: 'All Tools — Filezy',
+  title: 'All Tools — Dokly',
   description:
-    'Browse all free online tools on Filezy. PDF tools, image tools, text tools — all free, unlimited, no account required.',
+    'Browse all free online tools on Dokly. PDF tools, image tools, text tools — all free, unlimited, no account required.',
 }
 
 const CATEGORIES: ToolCategory[] = ['pdf', 'image', 'text', 'converter']
