@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-success: #16A34A;
+  --color-error: #DC2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Geist', system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+@layer components {
+  .tool-card-hover {
+    @apply transition-all duration-150 hover:shadow-card-hover hover:border-accent;
+    border-left-width: 3px;
+    border-left-color: transparent;
+  }
+  .tool-card-hover:hover {
+    border-left-color: #2563EB;
+  }
+}
