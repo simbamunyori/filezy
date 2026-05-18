@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { tools } from '@/lib/tools'
+import { getToolFaqs } from '@/lib/faqs'
 import ToolIcon from '@/components/ui/ToolIcon'
 import ToolArea from '@/components/tools/ToolArea'
 import { IMPLEMENTED_SLUGS } from '@/lib/implementedTools'
@@ -44,8 +45,28 @@ export default async function ToolPage({
   const tool = tools.find((t) => t.slug === slug)
   if (!tool) notFound()
 
+  const faqs = getToolFaqs(slug, tool.name, tool.inputFormats, tool.outputFormat)
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-xs text-muted mb-6" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-text transition-colors">
@@ -83,7 +104,7 @@ export default async function ToolPage({
         Your files never leave your device. All processing happens in your browser.
       </div>
 
-      {/* Tool area — live tool component or coming-soon placeholder */}
+      {/* Tool area */}
       <div className="bg-surface border border-border rounded-lg p-6">
         <ToolArea slug={slug} />
         {!IMPLEMENTED_SLUGS.has(slug) && (
@@ -100,7 +121,7 @@ export default async function ToolPage({
       </div>
 
       {/* SEO content */}
-      <div className="mt-10 space-y-8 prose-sm max-w-none">
+      <div className="mt-10 space-y-8">
         <section>
           <h2 className="text-base font-bold text-text mb-3">
             How to use {tool.name}
@@ -121,6 +142,21 @@ export default async function ToolPage({
             <li>All processing happens in your browser — files never leave your device.</li>
             <li>Works on any device without installing software or creating an account.</li>
           </ul>
+        </section>
+
+        {/* FAQ section */}
+        <section>
+          <h2 className="text-base font-bold text-text mb-4">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border border-border rounded-lg p-4">
+                <h3 className="text-sm font-semibold text-text mb-1.5">{faq.question}</h3>
+                <p className="text-sm text-muted">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </section>
       </div>
     </div>

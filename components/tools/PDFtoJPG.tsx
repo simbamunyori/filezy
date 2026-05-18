@@ -7,7 +7,7 @@ import ProcessButton from '@/components/ui/ProcessButton'
 import ProgressBar from '@/components/ui/ProgressBar'
 
 if (typeof window !== 'undefined') {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs'
 }
 
 interface PageResult {
