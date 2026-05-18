@@ -12,6 +12,11 @@ const JPGtoPDF = dynamic(() => import('./JPGtoPDF'), { ssr: false })
 const UnlockPDF = dynamic(() => import('./UnlockPDF'), { ssr: false })
 const ProtectPDF = dynamic(() => import('./ProtectPDF'), { ssr: false })
 const WatermarkPDF = dynamic(() => import('./WatermarkPDF'), { ssr: false })
+const CompressImage = dynamic(() => import('./CompressImage'), { ssr: false })
+const ResizeImage = dynamic(() => import('./ResizeImage'), { ssr: false })
+const ConvertImage = dynamic(() => import('./ConvertImage'), { ssr: false })
+const CropImage = dynamic(() => import('./CropImage'), { ssr: false })
+const RemoveBackground = dynamic(() => import('./RemoveBackground'), { ssr: false })
 
 const TOOL_MAP: Record<string, React.ComponentType> = {
   'merge-pdf': MergePDF,
@@ -23,6 +28,11 @@ const TOOL_MAP: Record<string, React.ComponentType> = {
   'unlock-pdf': UnlockPDF,
   'protect-pdf': ProtectPDF,
   'watermark-pdf': WatermarkPDF,
+  'compress-image': CompressImage,
+  'resize-image': ResizeImage,
+  'convert-image': ConvertImage,
+  'crop-image': CropImage,
+  'remove-background': RemoveBackground,
 }
 
 export default function ToolArea({ slug }: { slug: string }) {
