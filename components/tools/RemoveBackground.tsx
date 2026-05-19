@@ -31,16 +31,6 @@ export default function RemoveBackground() {
   const handleRemove = async () => {
     if (!file) return
 
-    // onnxruntime-web requires SharedArrayBuffer which is only available in
-    // cross-origin isolated contexts (COOP + COEP headers must be set).
-    if (typeof window !== 'undefined' && !window.crossOriginIsolated) {
-      setError(
-        'Background removal requires cross-origin isolation. ' +
-        'Please reload the page — if the problem persists, try Chrome or Firefox.'
-      )
-      return
-    }
-
     setProcessing(true)
     setError(null)
     setProgress(0)
@@ -71,12 +61,24 @@ export default function RemoveBackground() {
       setResult({ url, size: blob.size })
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
-      if (msg.toLowerCase().includes('sharedarraybuffer') || msg.toLowerCase().includes('wasm')) {
-        setError('Failed to load AI model. Please reload the page and try again, or use Chrome/Firefox.')
-      } else {
-        setError('Failed to remove background. Please try a JPG or PNG image.')
-      }
       console.error('[RemoveBackground]', err)
+
+      if (!window.crossOriginIsolated) {
+        setError(
+          'Background removal requires cross-origin isolation. ' +
+          'Please open this page directly (not via a link) or hard-reload it, then try again.'
+        )
+      } else if (
+        msg.toLowerCase().includes('sharedarraybuffer') ||
+        msg.toLowerCase().includes('wasm') ||
+        msg.toLowerCase().includes('session')
+      ) {
+        setError('Failed to load AI model. Please reload the page and try again, or use Chrome/Firefox.')
+      } else if (msg.toLowerCase().includes('publicpath') || msg.toLowerCase().includes('resource')) {
+        setError(`Failed to download AI model from CDN. Check your network connection and try again. (${msg})`)
+      } else {
+        setError(`Failed to remove background: ${msg}`)
+      }
     } finally {
       setProcessing(false)
     }
